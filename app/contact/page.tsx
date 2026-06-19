@@ -36,14 +36,17 @@ export default function Contact() {
     <main>
       <section className="bg-linear-to-br from-teal-50 to-white">
         <div className="max-w-3xl mx-auto px-4 py-16 md:py-24 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900">
-            Contact Your Dentist in Somerset West
-          </h1>
-          <p className="mt-4 text-slate-600">
-            Reach out to Mathee Dental Studio at Parc du Links in Firgrove.
-            We&rsquo;re here to help with all your dental needs in the
-            Helderberg area.
-          </p>
+          <span className="text-xs uppercase tracking-wider text-gray-500">
+            Dentist in Somerset West
+          </span>
+                    <h1 className="mt-2 text-3xl md:text-4xl font-bold text-slate-900">
+                      Get in Touch
+                    </h1>
+                    <p className="mt-4 text-slate-600">
+                      Reach out to Mathee Dental Studio at Parc du Links in Firgrove.
+                      We&rsquo;re here to help with all your dental needs in the
+                      Helderberg area.
+                    </p>
         </div>
       </section>
 
