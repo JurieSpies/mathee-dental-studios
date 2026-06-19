@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dental Tips",
+  title: "Dental Tips from Your Somerset West Dentist",
   description:
-    "Practical dental care tips from Mathee Dental Studio — brushing, flossing, diet, and habits for a healthy smile.",
+    "Practical dental care tips from Mathee Dental Studio in Firgrove, Somerset West — brushing, flossing, diet, and habits for a healthy smile.",
   openGraph: {
-    title: "Dental Tips — Mathee Dental Studio",
+    title: "Dental Tips from Your Somerset West Dentist | Mathee Dental Studio",
     description:
-      "Practical dental care tips from Mathee Dental Studio — brushing, flossing, diet, and habits for a healthy smile.",
+      "Practical dental care tips from Mathee Dental Studio in Firgrove, Somerset West — brushing, flossing, diet, and habits for a healthy smile.",
     url: "https://matheedental.com/tips",
     images: [
       {
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dental Tips — Mathee Dental Studio",
+    title: "Dental Tips from Your Somerset West Dentist | Mathee Dental Studio",
     description:
-      "Practical dental care tips from Mathee Dental Studio — brushing, flossing, diet, and habits for a healthy smile.",
+      "Practical dental care tips from Mathee Dental Studio in Firgrove, Somerset West — brushing, flossing, diet, and habits for a healthy smile.",
     images: ["https://matheedental.com/images/og-default.jpg"],
   },
   alternates: {
@@ -62,10 +62,12 @@ export default function Tips() {
     <main>
       <section className="bg-gradient-to-br from-teal-50 to-white">
         <div className="max-w-3xl mx-auto px-4 py-16 md:py-24 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900">Dental Tips</h1>
-          <p className="mt-4 text-slate-600">
-            Simple habits that make a big difference in your oral health.
-          </p>
+          <span className="text-xs uppercase tracking-wider text-gray-500">Oral Health Tips from Your Somerset West Dentist</span>
+                    <h1 className="mt-2 text-3xl md:text-4xl font-bold text-slate-900">Dental Tips</h1>
+                    <p className="mt-4 text-slate-600">
+                      Simple habits that make a big difference in your oral health, from the team at
+                      Mathee Dental Studio in Firgrove.
+                    </p>
         </div>
       </section>
 

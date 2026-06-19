@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Dental Services",
+  title: "Dental Services in Somerset West",
   description:
-    "Explore comprehensive dental services at Mathee Dental Studio — cleanings, exams, whitening, veneers, crowns, and more.",
+    "Explore comprehensive dental services at Mathee Dental Studio in Somerset West and Firgrove — cleanings, exams, whitening, veneers, crowns, and more.",
   openGraph: {
-    title: "Dental Services — Mathee Dental Studio",
+    title: "Dental Services in Somerset West | Mathee Dental Studio",
     description:
-      "Explore comprehensive dental services at Mathee Dental Studio — cleanings, exams, whitening, veneers, crowns, and more.",
+      "Explore comprehensive dental services at Mathee Dental Studio in Somerset West and Firgrove — cleanings, exams, whitening, veneers, crowns, and more.",
     url: "https://matheedental.com/services",
     images: [
       {
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dental Services — Mathee Dental Studio",
+    title: "Dental Services in Somerset West",
     description:
-      "Explore comprehensive dental services at Mathee Dental Studio — cleanings, exams, whitening, veneers, crowns, and more.",
+      "Explore comprehensive dental services at Mathee Dental Studio in Somerset West and Firgrove — cleanings, exams, whitening, veneers, crowns, and more.",
     images: ["https://matheedental.com/images/og-default.jpg"],
   },
   alternates: {
@@ -63,10 +63,11 @@ export default function Services() {
     <main>
       <section className="bg-gradient-to-br from-teal-50 to-white">
         <div className="max-w-3xl mx-auto px-4 py-16 md:py-24 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900">Dental Services</h1>
-          <p className="mt-4 text-slate-600">
-            Comprehensive care under one roof — from prevention to restoration and cosmetic enhancement.
-          </p>
+          <span className="text-xs uppercase tracking-wider text-gray-500">Dental Services in Somerset West</span>
+                    <h1 className="mt-2 text-3xl md:text-4xl font-bold text-slate-900">Comprehensive Dental Care, One Convenient Location</h1>
+                    <p className="mt-4 text-slate-600">
+                      Comprehensive care under one roof — from prevention to restoration and cosmetic enhancement.
+                    </p>
         </div>
       </section>
 

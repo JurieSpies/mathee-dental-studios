@@ -22,17 +22,19 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://matheedental.com"),
   title: {
-    default: "Mathee Dental Studio — Gentle & Expert Dental Care",
-    template: "%s — Mathee Dental Studio",
+    default: "Dentist in Somerset West | Mathee Dental Studio",
+    template: "%s | Mathee Dental Studio",
   },
   description:
-    "Mathee Dental Studio provides gentle, expert dental care including cleanings, exams, whitening, and cosmetic dentistry. Book your visit today.",
+    "Mathee Dental Studio is your trusted dentist in Somerset West and Firgrove, Helderberg. We provide gentle, expert dental care including cleanings, exams, whitening, and cosmetic dentistry. Book your visit today.",
   keywords: [
-    "dentist",
-    "dental care",
-    "teeth cleaning",
-    "cosmetic dentistry",
-    "teeth whitening",
+    "dentist Somerset West",
+    "dental care Helderberg",
+    "teeth cleaning Firgrove",
+    "cosmetic dentistry Somerset West",
+    "teeth whitening Somerset West",
+    "dentist Strand",
+    "dental implants Helderberg",
   ],
   robots: {
     index: true,
@@ -72,7 +74,38 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Nav />
         {children}
-        <footer className="bg-slate-800 text-slate-300 text-center text-sm py-6 mt-auto">
+        <footer className="bg-slate-800 text-slate-300 text-center text-sm py-8 mt-auto space-y-3">
+          <p>
+            Serving patients in Somerset West, Strand, Gordon&rsquo;s Bay, Firgrove, and the
+            broader Helderberg basin since 2010.
+          </p>
+          <p>
+            <a
+              href="https://www.facebook.com/MatheeDentalStudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-teal-400 hover:underline"
+            >
+              Facebook
+            </a>
+            &nbsp;|&nbsp;
+            <a
+              href="https://maps.google.com/?cid=2023782324485113225"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-teal-400 hover:underline"
+            >
+              Google Maps
+            </a>
+            &nbsp;|&nbsp;
+            <a href="/contact" className="text-teal-400 hover:underline">
+              Contact &amp; Directions
+            </a>
+            &nbsp;|&nbsp;
+            <a href="/book-appointment" className="text-teal-400 hover:underline">
+              Book an Appointment
+            </a>
+          </p>
           <p>&copy; {new Date().getFullYear()} Mathee Dental Studio. All rights reserved.</p>
         </footer>
       </body>

@@ -15,9 +15,17 @@ This repository contains a high-performance, local-SEO-focused reconstruction of
 
 ### 1. Local SEO & Content Routing Architecture (No standard CSR)
 - Do NOT use standard `create-react-app` or Client-Side Rendered (CSR) Vite architectures.
-- All primary routing pages must use Next.js Static Site Generation (SSG). 
-- **Local Keyword Injection:** Primary landing pages (Home, Services, Contact) must feature `<h1>` and `<h2>` tags combining service terms with target geographic keywords (e.g., *"Dentist in Somerset West"*, *"Dental Implants Helderberg"*, *"Mathee Dental Studio Firgrove"*).
-- Every page must export a typed `Metadata` object with these fields (Home page title must follow a local SEO pattern like `Dentist in Somerset West | Mathee Dental Studio`):
+- All primary routing pages must use Next.js Static Site Generation (SSG).
+- **Design-Friendly Local Keyword Injection:** Do NOT ruin the UI layout by forced, clunky keyword stuffing in primary high-visibility elements. Instead, balance premium design aesthetics with SEO using the following techniques:
+  - **Eyebrow Headings:** Keep main `<h1>` elements elegant and brand-focused. Place a small, clean "eyebrow" text element right above the `<h1>` inside the same header block containing the geographical target (e.g., `<span class="text-xs uppercase tracking-wider">Dental Studio in Somerset West</span> <h1>Crafting beautiful smiles.</h1>`). For service pages: `<span class="text-xs uppercase tracking-wider text-gray-500">Cosmetic Dentistry in Somerset West</span>`.
+  - **Footer Geo-Targeting:** Consolidate dense local targeting ("Serving patients in Somerset West, Strand, Gordon's Bay, and the Helderberg basin") inside semantic `<footer>` sections to preserve clean above-the-fold canvas layouts.
+  - **Granular Content Structuring:** While the homepage focuses on high-level brand presentation, ensure localized terms (*"Dentist in Somerset West"*, *"Dental Implants Helderberg"*) are seamlessly woven into natural context paragraphs, `<h2>` / `<h3>` headings lower on the page, and within dedicated subpages.
+- **Title & Meta Strategy**:
+  - Homepage: `Dentist in Somerset West | Mathee Dental Studio`
+  - Service pages: `[Service] Somerset West | Mathee Dental Studio` (e.g. "Dental Implants Somerset West")
+  - Use natural variations and secondary terms (Helderberg, Strand, Gordon's Bay, Firgrove) without stuffing.
+- **Content Guidelines**: All pages (especially service landing pages) must contain minimum 500–800 words of high-quality, patient-focused content answering common queries. Use related semantic terms naturally.
+- Every page must export a typed `Metadata` object with these fields:
   - `title`, `description`
   - `openGraph` — title, description, url, images[] (1200×630)
   - `twitter` — card: "summary_large_image", title, description, images[]
@@ -38,10 +46,11 @@ This repository contains a high-performance, local-SEO-focused reconstruction of
   - **Telephone:** +27218510461 (Format: `021 851 0461`)
   - **Price Range:** `$$`
   - **Opening Hours:** `Mo-Fr 08:00-17:00`, `Sa-Su Closed`
-- Ensure the schema mappings always include `geo` coordinates for Somerset West/Firgrove, `openingHours`, and `sameAs` links pointing to their official Google Business Profile.
+- Ensure the schema mappings always include `geo` coordinates for Somerset West/Firgrove, `openingHours`, and `sameAs` links pointing to their official Google Business Profile. Only include `AggregateRating` if utilizing a dynamic, compliant first-party review generation engine.
 
 ### 3. Media & Performance Optimization (Core Web Vitals)
 - Never use the standard HTML `<img>` tag. You must use `next/image`.
+- **SEO Descriptive Alt Text:** Every `next/image` component must feature explicit, highly contextual `alt` tags embedded with primary and secondary keywords where natural (e.g., `alt="Modern cosmetic dentistry treatment room at Mathee Dental Studio, Somerset West"`). Never leave alt descriptions blank or generic like `alt="image"`.
 - High-resolution dental gallery items must use explicit `width`, `height`, and layout tracking dimensions to achieve a zero Cumulative Layout Shift (CLS) score.
 - Above-the-fold media elements (like hero banners or initial studio slider visuals) must have the `priority` attribute explicitly declared.
 - **Interaction to Next Paint (INP):** Ensure interactive client-side components (e.g., FAQ accordions, mobile menu toggles) respond instantly. Avoid third-party layout-blocking scripts.
@@ -56,6 +65,20 @@ This repository contains a high-performance, local-SEO-focused reconstruction of
 - Do NOT make direct API fetch calls to external email services from interactive browser components.
 - Route form submissions to a secure Next.js Route Handler inside `app/api/contact/route.ts`.
 - Store the email service provider API keys strictly in server-side system environment variables (`process.env.RESEND_API_KEY`). Never expose these to the browser client.
+
+### 6. Google Business Profile (GBP) & Off-Page Local SEO
+- The website must reinforce and link to a fully optimized Google Business Profile (primary ranking driver for "dentist Somerset West" and related queries).
+- Include prominent, natural calls-to-action for reviews, directions, and booking on the homepage, contact, and footer.
+- Maintain perfect NAP (Name, Address, Phone) consistency across site, schema, and GBP.
+- If displaying testimonials, use verifiable patient copy and prioritize structured schema markup adjustments to safely emphasize local user social proof.
+- Prioritize earning local backlinks through community involvement, sponsorships, or partnerships in the Helderberg basin.
+
+### 7. Technical SEO & Performance Rules
+- Submit sitemap to Google Search Console immediately after deployment.
+- Ensure full mobile responsiveness and Core Web Vitals compliance (LCP < 2.5s, CLS < 0.1, INP < 200ms).
+- Use `next/image` with `sizes` attribute for responsive images and modern formats (WebP/AVIF).
+- Monitor with Google Search Console, PageSpeed Insights, and Lighthouse regularly.
+- Implement proper hreflang if expanding to Afrikaans/English variants in future.
 
 ## 📁 Expected Directory Structure
 Ensure any new features or specialized treatment pages follow this exact Next.js App Router tree mapping:
@@ -74,12 +97,12 @@ Ensure any new features or specialized treatment pages follow this exact Next.js
 │   │   └── page.tsx           # FAQ schema page
 │   ├── services/
 │   │   ├── page.tsx           # Dental Services Directory
-│   │   ├── cosmetic-dentistry/# Dedicated landing page (min 500 words)
-│   │   │   └── page.tsx
-│   │   ├── dental-implants/   # Dedicated landing page (min 500 words)
-│   │   │   └── page.tsx
-│   │   └── teeth-whitening/   # Dedicated landing page (min 500 words)
-│   │       └── page.tsx
+│   │   ├── cosmetic-dentistry/
+│   │   │   └── page.tsx       # Dedicated landing page (min 500 words)
+│   │   ├── dental-implants/
+│   │   │   └── page.tsx       # Dedicated landing page (min 500 words)
+│   │   └── teeth-whitening/
+│   │       └── page.tsx       # Dedicated landing page (min 500 words)
 │   ├── tips/
 │   │   └── page.tsx           # Dental tips / blog content
 │   ├── layout.tsx             # Global Base Layout + Meta Rules + Local Font

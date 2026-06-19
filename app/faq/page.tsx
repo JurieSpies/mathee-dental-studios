@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "Frequently Asked Questions",
   description:
-    "Frequently asked questions about Mathee Dental Studio — appointments, insurance, procedures, and more.",
+    "Frequently asked questions about Mathee Dental Studio in Firgrove, Somerset West — appointments, insurance, procedures, and more.",
   openGraph: {
-    title: "FAQ — Mathee Dental Studio",
+    title: "Frequently Asked Questions | Mathee Dental Studio",
     description:
-      "Frequently asked questions about Mathee Dental Studio — appointments, insurance, procedures, and more.",
+      "Frequently asked questions about Mathee Dental Studio in Firgrove, Somerset West — appointments, insurance, procedures, and more.",
     url: "https://matheedental.com/faq",
     images: [
       {
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FAQ — Mathee Dental Studio",
+    title: "Frequently Asked Questions | Mathee Dental Studio",
     description:
-      "Frequently asked questions about Mathee Dental Studio — appointments, insurance, procedures, and more.",
+      "Frequently asked questions about Mathee Dental Studio in Firgrove, Somerset West — appointments, insurance, procedures, and more.",
     images: ["https://matheedental.com/images/og-default.jpg"],
   },
   alternates: {
@@ -62,10 +62,11 @@ export default function FAQ() {
     <main>
       <section className="bg-gradient-to-br from-teal-50 to-white">
         <div className="max-w-3xl mx-auto px-4 py-16 md:py-24 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900">Frequently Asked Questions</h1>
-          <p className="mt-4 text-slate-600">
-            Everything you need to know before your visit.
-          </p>
+          <span className="text-xs uppercase tracking-wider text-gray-500">Dentist Somerset West — FAQ</span>
+                    <h1 className="mt-2 text-3xl md:text-4xl font-bold text-slate-900">Frequently Asked Questions</h1>
+                    <p className="mt-4 text-slate-600">
+                      Everything you need to know before your visit to our Firgrove practice.
+                    </p>
         </div>
       </section>
 
