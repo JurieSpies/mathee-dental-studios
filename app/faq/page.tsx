@@ -1,7 +1,33 @@
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "FAQ",
   description:
     "Frequently asked questions about Mathee Dental Studio — appointments, insurance, procedures, and more.",
+  openGraph: {
+    title: "FAQ — Mathee Dental Studio",
+    description:
+      "Frequently asked questions about Mathee Dental Studio — appointments, insurance, procedures, and more.",
+    url: "https://matheedental.com/faq",
+    images: [
+      {
+        url: "https://matheedental.com/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Frequently Asked Questions — Mathee Dental Studio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQ — Mathee Dental Studio",
+    description:
+      "Frequently asked questions about Mathee Dental Studio — appointments, insurance, procedures, and more.",
+    images: ["https://matheedental.com/images/og-default.jpg"],
+  },
+  alternates: {
+    canonical: "https://matheedental.com/faq",
+  },
 };
 
 const faqs = [

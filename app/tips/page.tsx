@@ -1,7 +1,33 @@
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Dental Tips",
   description:
     "Practical dental care tips from Mathee Dental Studio — brushing, flossing, diet, and habits for a healthy smile.",
+  openGraph: {
+    title: "Dental Tips — Mathee Dental Studio",
+    description:
+      "Practical dental care tips from Mathee Dental Studio — brushing, flossing, diet, and habits for a healthy smile.",
+    url: "https://matheedental.com/tips",
+    images: [
+      {
+        url: "https://matheedental.com/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dental Tips — Mathee Dental Studio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dental Tips — Mathee Dental Studio",
+    description:
+      "Practical dental care tips from Mathee Dental Studio — brushing, flossing, diet, and habits for a healthy smile.",
+    images: ["https://matheedental.com/images/og-default.jpg"],
+  },
+  alternates: {
+    canonical: "https://matheedental.com/tips",
+  },
 };
 
 const tips = [

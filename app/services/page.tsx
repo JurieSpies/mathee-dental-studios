@@ -1,9 +1,34 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Dental Services",
   description:
     "Explore comprehensive dental services at Mathee Dental Studio — cleanings, exams, whitening, veneers, crowns, and more.",
+  openGraph: {
+    title: "Dental Services — Mathee Dental Studio",
+    description:
+      "Explore comprehensive dental services at Mathee Dental Studio — cleanings, exams, whitening, veneers, crowns, and more.",
+    url: "https://matheedental.com/services",
+    images: [
+      {
+        url: "https://matheedental.com/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dental Services at Mathee Dental Studio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dental Services — Mathee Dental Studio",
+    description:
+      "Explore comprehensive dental services at Mathee Dental Studio — cleanings, exams, whitening, veneers, crowns, and more.",
+    images: ["https://matheedental.com/images/og-default.jpg"],
+  },
+  alternates: {
+    canonical: "https://matheedental.com/services",
+  },
 };
 
 const services = [

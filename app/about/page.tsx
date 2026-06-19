@@ -1,9 +1,34 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "About Us",
   description:
     "Learn about Mathee Dental Studio — our philosophy, our team, and our commitment to gentle, expert dental care.",
+  openGraph: {
+    title: "About Us — Mathee Dental Studio",
+    description:
+      "Learn about Mathee Dental Studio — our philosophy, our team, and our commitment to gentle, expert dental care.",
+    url: "https://matheedental.com/about",
+    images: [
+      {
+        url: "https://matheedental.com/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "About Mathee Dental Studio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us — Mathee Dental Studio",
+    description:
+      "Learn about Mathee Dental Studio — our philosophy, our team, and our commitment to gentle, expert dental care.",
+    images: ["https://matheedental.com/images/og-default.jpg"],
+  },
+  alternates: {
+    canonical: "https://matheedental.com/about",
+  },
 };
 
 export default function About() {

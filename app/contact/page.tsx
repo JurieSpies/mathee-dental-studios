@@ -1,13 +1,39 @@
-export const metadata = {
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Mathee Dental Studio. Find our address, phone number, email, and hours of operation.",
+  openGraph: {
+    title: "Contact — Mathee Dental Studio",
+    description:
+      "Get in touch with Mathee Dental Studio. Find our address, phone number, email, and hours of operation.",
+    url: "https://matheedental.com/contact",
+    images: [
+      {
+        url: "https://matheedental.com/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Mathee Dental Studio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact — Mathee Dental Studio",
+    description:
+      "Get in touch with Mathee Dental Studio. Find our address, phone number, email, and hours of operation.",
+    images: ["https://matheedental.com/images/og-default.jpg"],
+  },
+  alternates: {
+    canonical: "https://matheedental.com/contact",
+  },
 };
 
 export default function Contact() {
   return (
     <main>
-      <section className="bg-gradient-to-br from-teal-50 to-white">
+      <section className="bg-linear-to-br from-teal-50 to-white">
         <div className="max-w-3xl mx-auto px-4 py-16 md:py-24 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-slate-900">Contact Us</h1>
           <p className="mt-4 text-slate-600">
@@ -47,6 +73,37 @@ export default function Contact() {
         <div>
           <h2 className="text-xl font-semibold text-slate-900">Send a Message</h2>
           {/* ponytail: static form placeholder — no API route wired yet. Add app/api/contact/route.ts and wire action to get submissions */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Dentist",
+                name: "Mathee Dental Studio",
+                description:
+                  "Mathee Dental Studio provides gentle, expert dental care including cleanings, exams, whitening, and cosmetic dentistry.",
+                url: "https://matheedental.com",
+                telephone: "(555) 123-4567",
+                email: "hello@matheedental.com",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "123 Smile Avenue, Suite 100",
+                  addressLocality: "Anytown",
+                  addressRegion: "ST",
+                  postalCode: "12345",
+                  addressCountry: "US",
+                },
+                openingHoursSpecification: [
+                  { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "08:00", closes: "17:00" },
+                  { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "08:00", closes: "17:00" },
+                  { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "08:00", closes: "17:00" },
+                  { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "08:00", closes: "17:00" },
+                  { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "08:00", closes: "15:00" },
+                  { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "13:00" },
+                ],
+              }),
+            }}
+          />
           <form className="mt-4 space-y-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-slate-700">Name</label>

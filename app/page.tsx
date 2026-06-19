@@ -1,9 +1,34 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Mathee Dental Studio — Gentle & Expert Dental Care",
   description:
     "Welcome to Mathee Dental Studio. We provide gentle, expert dental care — from routine cleanings to cosmetic dentistry. Book your visit today.",
+  openGraph: {
+    title: "Mathee Dental Studio — Gentle & Expert Dental Care",
+    description:
+      "Welcome to Mathee Dental Studio. We provide gentle, expert dental care — from routine cleanings to cosmetic dentistry. Book your visit today.",
+    url: "https://matheedental.com",
+    images: [
+      {
+        url: "https://matheedental.com/images/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mathee Dental Studio — Gentle & Expert Dental Care",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mathee Dental Studio — Gentle & Expert Dental Care",
+    description:
+      "Welcome to Mathee Dental Studio. We provide gentle, expert dental care — from routine cleanings to cosmetic dentistry. Book your visit today.",
+    images: ["https://matheedental.com/images/og-default.jpg"],
+  },
+  alternates: {
+    canonical: "https://matheedental.com",
+  },
 };
 
 export default function Home() {
